@@ -11,7 +11,7 @@
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 
-	<context:component-scan base-package="allen.activiti.demo.*.web.*" />
+	<context:component-scan base-package="allen.activiti.web" />
 
 	<!-- 视图解释类 -->
 	<bean

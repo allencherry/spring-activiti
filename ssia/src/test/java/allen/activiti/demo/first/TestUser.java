@@ -1,4 +1,4 @@
-package first;
+package allen.activiti.demo.first;
 
 import java.util.List;
 
@@ -14,24 +14,33 @@ import allen.activiti.demo.first.service.UserService;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:spring.xml" })
 public class TestUser {
-	@Autowired
+	
 	private UserService userService;
+
+	public UserService getUserService() {
+		return userService;
+	}
+
+	public void setUserService(UserService userService) {
+		this.userService = userService;
+	}
+
 	@Test
 	public void testGetUser() {
 		List<User> users = userService.selectUser();
-		
-		for(User u: users){
+
+		for (User u : users) {
 			System.out.println(u.getUserName());
 		}
 	}
-	
+
 	@Test
-	public void testRun(){
+	public void testRun() {
 		System.out.println("hello");
 	}
-	
+
 	public static void main(String[] args) {
 		System.out.println("hello");
 	}
-	
+
 }
