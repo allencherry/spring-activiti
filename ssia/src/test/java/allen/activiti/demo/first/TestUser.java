@@ -10,12 +10,15 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import allen.activiti.demo.first.entity.User;
 import allen.activiti.demo.first.service.UserService;
+import allen.activiti.demo.first.service.WorkFlow;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:spring.xml" })
 public class TestUser {
 	@Autowired
 	private UserService userService;
+	@Autowired
+	private WorkFlow workFlow;
 
 	@Test
 	public void testGetUser() {
@@ -24,6 +27,11 @@ public class TestUser {
 		for (User u : users) {
 			System.out.println(u.getUserName());
 		}
+	}
+	
+	@Test
+	public void testDeploy(){
+		workFlow.deploye();
 	}
 
 }
