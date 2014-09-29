@@ -11,26 +11,16 @@ import allen.activiti.demo.first.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {
-
-	public UserMapper getUserMapper() {
-		return userMapper;
-	}
-
-
-	public void setUserMapper(UserMapper userMapper) {
-		this.userMapper = userMapper;
-	}
-
-
+	@Autowired
 	private UserMapper userMapper;
 
 	public List<User> selectUser() {
 		return this.userMapper.selectUser();
 	}
-	
 
-public static void main(String[] args) {
-     System.out.println("hello");
+	public void test01() {
+		System.out.println("hello");
+
 	}
 
 }
